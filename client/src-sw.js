@@ -1,5 +1,5 @@
 const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
-const { CacheFirst, NetworkOnly } = require('workbox-strategies');
+const { CacheFirst, NetworkOnly, StaleWhileRevalidate } = require('workbox-strategies');
 const { registerRoute, setDefaultHandler } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
@@ -40,5 +40,5 @@ registerRoute(
 );
 
 //not sure exactly how this works
-setDefaultHandler(new NetworkOnly());
-offlineFallback();
+// setDefaultHandler(new NetworkOnly());
+// offlineFallback();
